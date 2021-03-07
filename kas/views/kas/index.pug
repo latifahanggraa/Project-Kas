@@ -1,0 +1,37 @@
+extends layout
+block content
+    header
+        .headertext KasMu  
+    judul
+    .judultext Data Uang Kas
+    button 
+     a(href='kas/create' class="tambah") Tambah Data 
+    center  
+        .data-table(align='center')
+        table(style='width: 80%; border:1px solid black;' rules='all')
+            br
+            tr(style='background-color:  #fffff;')
+                th 
+                    |   No
+                th 
+                    |   Tanggal
+                th 
+                    |   Sumber 
+                th 
+                    |   Jumlah 
+                th 
+                    |    Keterangan 
+                th 
+                    |     Aksi
+            for row, index in data
+                tr
+                    td #{index + 1}
+                    td #{row.tanggal}
+                    td #{row.sumber}
+                    td #{row.jumlah}
+                    td #{row.keterangan}
+                    td
+                        form(action=`/kas/${row.id}?_method=DELETE`, method="post")
+                            input(type="submit", value="Hapus")
+                            a(href=`/kas/${row.id}/edit`) | Ubah 
+                            

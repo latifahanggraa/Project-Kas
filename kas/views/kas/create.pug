@@ -1,0 +1,29 @@
+extends layout
+block content
+    header(style=' background-color:  #706FD3; color: white; padding: 12px 3px; font-size: 24px; text-align:left;')
+        .headertext Tambah Data 
+    content 
+        br
+        form(action="/kas" method="post")
+            label Tanggal
+                br
+                input(type="text" name="tanggal" style='width: 20%')
+                br
+            label Sumber 
+                br
+                input(type="text" name="sumber" style='width: 20%')
+                br
+            label Jumlah 
+                br
+                input(type="text" name="jumlah" style='width: 20%')
+                br
+            label Keterangan 
+                br
+                input(type="text" name="keterangan" style='width: 20%')
+                br
+                br
+            input(type="submit" value="Simpan" style='background-color: #2980B9; color: white; border: none; padding:7px 7px;')
+            input(type="submit" value="Batal" style='background-color:  #2980B9; color: white; border: none; padding:7px 14px; margin-left: 5px;')
+    
+  
+            
